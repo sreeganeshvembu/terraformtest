@@ -16,10 +16,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
              
-      - name: Check Azure CLI
-        run: |
-         az --version
-        continue-on-error: true
 
       - name: Install Azure CLI
         if: ${{ failure() }}
@@ -52,6 +48,11 @@ jobs:
 
       - name: Plan Terraform changes
         run: terraform plan -out=tfplan
+
+      - name: Apply Terraform changes
+        run: terraform apply -auto-approve tfplan
+      
+
 
       - name: Clean up Terraform files
         run: rm -rf .terraform
