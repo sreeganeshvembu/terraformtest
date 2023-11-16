@@ -22,8 +22,3 @@ output "vm1_id" {
   value       = azurerm_virtual_machine.vm1.id
   description = "ID of the Virtual Machine in VNet 1"
 }
-
-output "application_gateway_id" {
-  value       = azurerm_application_gateway.appgw.id
-  description = "ID of the Application Gateway in VNet 2"
-}
