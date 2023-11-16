@@ -18,7 +18,3 @@ variable "common_tags" {
     "environment"     = "dev"
   }
 }
-
-variable "resource_name_prefix" {
-  default = "${var.project_name}-${var.environment}-${var.location}"
-}
