@@ -31,7 +31,10 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
 
       - name: Debugging
         run: |
@@ -48,4 +51,7 @@ jobs:
         run: terraform plan -out=tfplan
 
       - name: Clean up Terraform files
-        run: rm -
+        run: rm -rf .terraform
+
+      - name: Logout from Azure
+        run: az logout
