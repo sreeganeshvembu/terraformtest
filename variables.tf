@@ -7,7 +7,7 @@ variable "environment" {
 }
 
 variable "location" {
-  default = "Germany West Central" # Note: Azure uses "Germany West Central" for West Germany
+  default = "Germany West Central"  # Adjust as per your Azure region
 }
 
 variable "common_tags" {
