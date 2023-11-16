@@ -12,7 +12,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "test-rg"
+  name     = "ganeshtestrg001"
   location = var.location
   tags     = var.common_tags
 }
