@@ -102,18 +102,5 @@ resource "azurerm_subnet" "vnet1_subnet" {
   name                 = "vnet1-subnet"
   resource_group_name  = azurerm_virtual_network.vnet1.resource_group_name
   virtual_network_name = azurerm_virtual_network.vnet1.name
-  address_prefix       = "10.0.1.0/24"
+  address_prefixes       = "10.0.1.0/24"
 }
-
-# Application Gateway in VNet 2
-resource "azurerm_application_gateway" "appgw" {
-  name                = "appgw-${var.project_name}-${var.environment}-${var.location}"
-  location            = azurerm_resource_group.rg2.location
-  resource_group_name = azurerm_resource_group.rg2.name
-
-  # Basic Configuration for Application Gateway
-  # Include additional configuration as per requirements
-  # ...
-}
-
-# Add additional configurations for Application Gateway as required
