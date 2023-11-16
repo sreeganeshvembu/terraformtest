@@ -17,8 +17,3 @@ output "virtual_network_vnet2_id" {
   value       = azurerm_virtual_network.vnet2.id
   description = "ID of Virtual Network 2"
 }
-
-output "vm1_id" {
-  value       = azurerm_virtual_machine.vm1.id
-  description = "ID of the Virtual Machine in VNet 1"
-}
