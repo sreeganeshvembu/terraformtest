@@ -59,19 +59,21 @@ resource "azurerm_virtual_machine" "vm1" {
   vm_size               = "Standard_F4s"
 
   # Uncomment and modify the below block to specify the OS disk and image used for the VM
-  # storage_os_disk {
-  #   name              = "osdisk"
-  #   caching           = "ReadWrite"
-  #   create_option     = "FromImage"
-  #   managed_disk_type = "Standard_LRS"
-  # }
+   
+storage_os_disk {
+     name              = "osdisk"
+     caching           = "ReadWrite"
+     create_option     = "FromImage"
+     managed_disk_type = "Standard_LRS"
+     disk_size_gb      = 30
+   }
 
-  # storage_image_reference {
-  #   publisher = "Canonical"
-  #   offer     = "UbuntuServer"
-  #   sku       = "16.04-LTS"
-  #   version   = "latest"
-  # }
+   storage_image_reference {
+     publisher = "Canonical"
+     offer     = "UbuntuServer"
+     sku       = "16.04-LTS"
+     version   = "latest"
+   }
 
   os_profile {
     computer_name  = "vmhostname"
